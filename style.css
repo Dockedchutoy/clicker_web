@@ -1,0 +1,13 @@
+#clicker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid;
+    margin-bottom: 50px;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+}
