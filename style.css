@@ -1,13 +1,44 @@
-#clicker {
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    margin: 0px;
+    background-color: gray;
+}
+
+#header {
+    display: flex;
+    background: lightblue;
+    height: 80px;
+    width: 100%;
+    margin-bottom: 50px;
+    padding-left: 10px;
+}
+
+#content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border: 1px solid;
+}
+
+#clicker_view {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     border: 1px solid;
-    margin-bottom: 50px;
 }
 
 #sidebar {
     display: flex;
     flex-direction: column;
     border: 1px solid;
+}
+
+button {
+    height: 50px;
+    width: 200px;
+    font-size: 16px;
 }

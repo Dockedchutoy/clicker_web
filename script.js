@@ -19,9 +19,11 @@ upgrade1.addEventListener("click", function() {
         if (auto_upgrade == 0) {
             auto_upgrade += 1;
             document.getElementById("counter").innerHTML = score;
+            document.getElementById("ac_interval_view").innerHTML = `Autoclick every ${ac_interval / 1000} seconds`
         } else {
-            auto_interval -= 2;
+            ac_interval -= 2;
             document.getElementById("counter").innerHTML = score;
+            document.getElementById("ac_interval_view").innerHTML = `Autoclick every ${ac_interval / 1000} seconds`
         }
     }
 
