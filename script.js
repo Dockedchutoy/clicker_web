@@ -26,14 +26,13 @@ btn.addEventListener("click", function() {
 
     if (score > highscore) {
         highscore = score;
-        highscore_view.innerHTML = `Highscore: ${highscore}`;
+        highscore_view.innerHTML = `Max. skóre: ${highscore}`;
     }
 });
 
 // Manual clicker mc_upgrade 1
 
 let upgrade_mc = document.getElementById("upgrade_mc");
-let upgrade_mc_count = 0;
 let upgrade_mc_cost = 10;
 upgrade_mc.addEventListener("click", function() {
     if( score >= upgrade_mc_cost){
@@ -41,7 +40,6 @@ upgrade_mc.addEventListener("click", function() {
         mc_upgrade += 1;
         document.getElementById("counter").innerHTML = score;
 
-        upgrade_mc_count += 1;
         upgrade_mc_cost += Math.ceil(upgrade_mc_cost * (20 / 100));
 
         /* upgrade_mc.disabled = true;
@@ -63,7 +61,8 @@ upgrade1.addEventListener("click", function() {
         ac_amount += 0.5;
         ac_interval = 1000 / ac_amount;
 
-        upgrade1_cost += 1.5;
+        upgrade1_cost *= 1.5;
+        upgrade1_cost = Math.ceil(upgrade1_cost);
 
         document.getElementById("counter").innerHTML = score;
         upgrade1.innerText = `Autoclicker +0.5 - ${upgrade1_cost}$`
@@ -76,7 +75,7 @@ upgrade1.addEventListener("click", function() {
 // Autoclicker upgrade +1
 
 let upgrade2 = document.getElementById("upgrade2");
-let upgrade2_cost = 50;
+let upgrade2_cost = 25;
 upgrade2.addEventListener("click", function() {
     if( score >= upgrade2_cost){
         score -= upgrade2_cost;
@@ -85,7 +84,7 @@ upgrade2.addEventListener("click", function() {
         ac_interval = 1000 / ac_amount;
 
         upgrade2_cost *= 1.2;
-        upgrade2_cost = Math.round(upgrade2_cost);
+        upgrade2_cost = Math.ceil(upgrade2_cost);
 
         document.getElementById("counter").innerHTML = score;
         upgrade2.innerText = `Autoclicker +1 - ${upgrade2_cost}$`
@@ -107,7 +106,7 @@ upgrade3.addEventListener("click", function() {
         ac_interval = 1000 / ac_amount;
 
         upgrade3_cost *= 1.4;
-        upgrade3_cost = Math.round(upgrade3_cost);
+        upgrade3_cost = Math.ceil(upgrade3_cost);
 
         document.getElementById("counter").innerHTML = score;
         upgrade3.innerText = `Autoclicker +5 - ${upgrade3_cost}$`;
@@ -127,7 +126,7 @@ upgrade_mc2.addEventListener("click", function() {
         document.getElementById("counter").innerHTML = score;
 
         upgrade_mc2_cost *= 1.6;
-        upgrade_mc2_cost = Math.round(upgrade_mc2_cost);  // uložení zaokrouhlení
+        upgrade_mc2_cost = Math.ceil(upgrade_mc2_cost);  // uložení zaokrouhlení
 
         upgrade_mc2.innerText = `Manuální Klik +5 - ${upgrade_mc2_cost}$`;
         document.getElementById("mc_per_click").innerHTML = `${mc_upgrade}$ za jeden klik`;
@@ -145,12 +144,15 @@ upgrade_mc3.addEventListener("click", function() {
         document.getElementById("counter").innerHTML = score;
 
         upgrade_mc3_cost *= 1.6;
-        upgrade_mc3_cost = Math.round(upgrade_mc3_cost);  // uložení zaokrouhlení
+        upgrade_mc3_cost = Math.ceil(upgrade_mc3_cost);  // uložení zaokrouhlení
 
         upgrade_mc3.innerText = `Manuální Klik +5 - ${upgrade_mc3_cost}$`;
         document.getElementById("mc_per_click").innerHTML = `${mc_upgrade}$ za jeden klik`;
     }
 });
+
+// Stats to clipboard
+
 
 // Auto clicker
 
@@ -164,7 +166,7 @@ function autoClicker() {
 
     if (score > highscore) {
         highscore = score;
-        highscore_view.innerHTML = `Highscore: ${highscore}`;
+        highscore_view.innerHTML = `Max. skóre: ${highscore}`;
     }
     }
     setTimeout(autoClicker, ac_interval);
