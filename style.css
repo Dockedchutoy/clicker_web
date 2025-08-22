@@ -1,44 +1,104 @@
 * {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
 }
 
 body {
-    margin: 0px;
-    background-color: gray;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298); /* tmavší modrá do modrotyrkysové */
+}
+
+p {
+    color: white;
+}
+
+#counter {
+    font-size: 40px;
+    margin: 10px;
+    padding: 5px; 
+    color: #f4d35e; /* jemnější žlutá */
+    animation: pulse 2s infinite;
 }
 
 #header {
     display: flex;
-    background: lightblue;
+    justify-content: center;  
+    align-items: center;      
+    background: #4ca1af; /* světlejší tyrkys/modrá */
     height: 80px;
     width: 100%;
-    margin-bottom: 50px;
-    padding-left: 10px;
+    margin-bottom: 50px;  
+    color: white;      
+}
+
+#header h1 {
+    text-align: center; 
 }
 
 #content {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    border: 1px solid;
 }
 
 #clicker_view {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    border: 1px solid;
+    border: 1px solid #255f5a;
+    background-color: #317873; /* střední tyrkys */
+    padding: 8px;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    transition: background-color 0.3s, border 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 #sidebar {
+    color: white;
     display: flex;
     flex-direction: column;
-    border: 1px solid;
+    border: 1px solid #255f5a;
+    background-color: #317873; /* střední tyrkys */
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+    transition: background-color 0.3s, border 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#sidebar h2 {
+    text-align: center;
 }
 
 button {
+    transition: background-color 0.3s, border 0.3s;
     height: 50px;
     width: 200px;
     font-size: 16px;
+    margin: 5px;
+    background-color: #7fb3bf; /* světle modrá */
+    border: 2px solid #517a82; /* tmavší modrá */
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5190a2;
+    border: 2px solid #2a4d57;
+}
+
+#clicker_view:hover, #sidebar:hover {
+    box-shadow: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
