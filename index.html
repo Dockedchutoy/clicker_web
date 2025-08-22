@@ -11,22 +11,29 @@
         <h1>Simple Clicker</h1>
     </header>
 
-    <div id="content">
+    <main id="content">
 
     <div id="clicker_view">
         <div id="counter">0</div>
-        <button id="clicker">Click me!</button>
+        <button id="clicker">Klikni sem!</button>
         <br/>
-        <p id="ac_interval_view">Autoclick every 0 seconds</p> <!-- ano mohl bych to kurva udělat že nastavim barvu v css souboru ale mrdám na to bruh-->
+        <p id="mc_per_click">1$ za click</p>
+        <p id="ac_interval_view">Autoclick každých 0 sekund</p> <!-- ano mohl bych to kurva udělat že nastavim barvu v css souboru ale mrdám na to bruh-->
+        <p id="ac_per_click">0$ za jednu sekundu</p>
     </div>
 
     <div id="sidebar">
-        <button id="upgrade1">Autoclicker +2 - 10$</button>
+        <button id="upgrade_mc">Manualní Klik +1 - 10$</button>
+        <button id="upgrade1">Autoclicker +0.5 - 10$</button>
         <button id="upgrade2">Autoclicker +1 - 50$</button>
-        <button id="upgrade_mc">Manual Clicker +1 - 1000$</button>
     </div>
 
-    </div>
+    </main>
+
+    <footer id="footer">
+        <p>© 2025 Klikací hra.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
