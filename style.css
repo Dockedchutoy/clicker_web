@@ -93,6 +93,12 @@ button:hover {
     border: 2px solid #2a4d57;
 }
 
+button:disabled {
+    opacity: 75%;
+    filter: grayscale(75%);
+    color: red;
+}
+
 #clicker_view:hover, #sidebar:hover {
     box-shadow: none;
 }
