@@ -16,7 +16,29 @@ btn.addEventListener("click", function() {
     document.getElementById("counter").innerHTML = score;
 });
 
-// Autoclicker mc_upgrade +0.5
+// Manual clicker mc_upgrade 1
+
+let upgrade_mc = document.getElementById("upgrade_mc");
+let upgrade_mc_count = 0;
+let upgrade_mc_cost = 10;
+upgrade_mc.addEventListener("click", function() {
+    if( score >= upgrade_mc_cost){
+        score -= upgrade_mc_cost;
+        mc_upgrade += 1;
+        document.getElementById("counter").innerHTML = score;
+
+        upgrade_mc_count += 1;
+        upgrade_mc_cost += Math.ceil(upgrade_mc_cost * (20 / 100));
+
+        /* upgrade_mc.disabled = true;
+        upgrade_mc.innerText = "Double Manual Clicks - BOUGHT OUT"; */
+
+        upgrade_mc.innerText = `Manuální Klik - ${upgrade_mc_cost}$`;
+        document.getElementById("mc_per_click").innerHTML = `${mc_upgrade}$ za jeden klik`
+    }
+});
+
+// Autoclicker upgrade +0.5
 
 let upgrade1 = document.getElementById("upgrade1");
 let upgrade1_count = 0;
@@ -33,12 +55,13 @@ upgrade1.addEventListener("click", function() {
 
         document.getElementById("counter").innerHTML = score;
         upgrade1.innerText = `Autoclicker +0.5 - ${upgrade1_cost}$`
-        document.getElementById("ac_interval_view").innerHTML = `Autoclick every ${(ac_interval / 1000).toFixed(4)} seconds`;     
+        document.getElementById("ac_interval_view").innerHTML = `Autoclick každých ${(ac_interval / 1000).toFixed(4)} sekund`;     
+        document.getElementById("ac_per_click").innerHTML = `${ac_amount}$ za jednu sekundu`
     }
 
 });
 
-// Autoclicker mc_upgrade +1
+// Autoclicker upgrade +1
 
 let upgrade2 = document.getElementById("upgrade2");
 let upgrade2_count = 0;
@@ -55,26 +78,10 @@ upgrade2.addEventListener("click", function() {
 
         document.getElementById("counter").innerHTML = score;
         upgrade2.innerText = `Autoclicker +1 - ${upgrade2_cost}$`
-        document.getElementById("ac_interval_view").innerHTML = `Autoclick every ${(ac_interval / 1000).toFixed(4)} seconds`;     
+        document.getElementById("ac_interval_view").innerHTML = `Autoclick každých ${(ac_interval / 1000).toFixed(4)} sekund`;
+        document.getElementById("ac_per_click").innerHTML = `${ac_amount}$ za jednu sekundu`
     }
 
-});
-
-// Manual clicker mc_upgrade 1
-
-let upgrade_mc = document.getElementById("upgrade_mc");
-let upgrade_mc_count = 0;
-upgrade_mc.addEventListener("click", function() {
-    if( score >= 1000){
-        score -= 1000;
-        mc_upgrade *= 2;
-        document.getElementById("counter").innerHTML = score;
-        upgrade_mc_count += 1;
-        if (upgrade_mc_count == 2) {
-            upgrade_mc.disabled = true;
-            upgrade_mc.innerText = "Double Manual Clicks - BOUGHT OUT";
-        }
-    }
 });
 
 // Auto clicker
