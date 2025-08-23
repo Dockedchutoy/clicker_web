@@ -30,6 +30,8 @@ btn.addEventListener("click", function() {
     }
 });
 
+// --Upgrade Buttons--
+
 // Manual clicker mc_upgrade 1
 
 let upgrade_mc = document.getElementById("upgrade_mc");
@@ -46,6 +48,42 @@ upgrade_mc.addEventListener("click", function() {
         upgrade_mc.innerText = "Double Manual Clicks - BOUGHT OUT"; */
 
         upgrade_mc.innerText = `Manuální Klik - ${upgrade_mc_cost}$`;
+        document.getElementById("mc_per_click").innerHTML = `${mc_upgrade}$ za jeden klik`;
+    }
+});
+
+// Manual clicker mc_upgrade 2
+let upgrade_mc2 = document.getElementById("upgrade_mc2");
+let upgrade_mc2_cost = 100;
+upgrade_mc2.addEventListener("click", function() {
+    if (score >= upgrade_mc2_cost) {
+        score -= upgrade_mc2_cost;  // opraveno
+
+        mc_upgrade += 5;
+        document.getElementById("counter").innerHTML = score;
+
+        upgrade_mc2_cost *= 1.6;
+        upgrade_mc2_cost = Math.ceil(upgrade_mc2_cost);  // uložení zaokrouhlení
+
+        upgrade_mc2.innerText = `Manuální Klik +5 - ${upgrade_mc2_cost}$`;
+        document.getElementById("mc_per_click").innerHTML = `${mc_upgrade}$ za jeden klik`;
+    }
+});
+
+// Manual clicker mc_upgrade 3
+let upgrade_mc3 = document.getElementById("upgrade_mc3");
+let upgrade_mc3_cost = 800;
+upgrade_mc3.addEventListener("click", function() {
+    if (score >= upgrade_mc3_cost) {
+        score -= upgrade_mc3_cost;  // opraveno
+
+        mc_upgrade += 50;
+        document.getElementById("counter").innerHTML = score;
+
+        upgrade_mc3_cost *= 1.6;
+        upgrade_mc3_cost = Math.ceil(upgrade_mc3_cost);  // uložení zaokrouhlení
+
+        upgrade_mc3.innerText = `Manuální Klik +5 - ${upgrade_mc3_cost}$`;
         document.getElementById("mc_per_click").innerHTML = `${mc_upgrade}$ za jeden klik`;
     }
 });
@@ -115,41 +153,7 @@ upgrade3.addEventListener("click", function() {
     }
 });
 
-// Manual clicker mc_upgrade 2
-let upgrade_mc2 = document.getElementById("upgrade_mc2");
-let upgrade_mc2_cost = 100;
-upgrade_mc2.addEventListener("click", function() {
-    if (score >= upgrade_mc2_cost) {
-        score -= upgrade_mc2_cost;  // opraveno
-
-        mc_upgrade += 5;
-        document.getElementById("counter").innerHTML = score;
-
-        upgrade_mc2_cost *= 1.6;
-        upgrade_mc2_cost = Math.ceil(upgrade_mc2_cost);  // uložení zaokrouhlení
-
-        upgrade_mc2.innerText = `Manuální Klik +5 - ${upgrade_mc2_cost}$`;
-        document.getElementById("mc_per_click").innerHTML = `${mc_upgrade}$ za jeden klik`;
-    }
-});
-
-// Manual clicker mc_upgrade 3
-let upgrade_mc3 = document.getElementById("upgrade_mc3");
-let upgrade_mc3_cost = 1000;
-upgrade_mc3.addEventListener("click", function() {
-    if (score >= upgrade_mc3_cost) {
-        score -= upgrade_mc3_cost;  // opraveno
-
-        mc_upgrade += 50;
-        document.getElementById("counter").innerHTML = score;
-
-        upgrade_mc3_cost *= 1.6;
-        upgrade_mc3_cost = Math.ceil(upgrade_mc3_cost);  // uložení zaokrouhlení
-
-        upgrade_mc3.innerText = `Manuální Klik +5 - ${upgrade_mc3_cost}$`;
-        document.getElementById("mc_per_click").innerHTML = `${mc_upgrade}$ za jeden klik`;
-    }
-});
+// --Other Stuff--
 
 // Stats to clipboard
 
